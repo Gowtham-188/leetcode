@@ -1,0 +1,32 @@
+// Last updated: 4/22/2026, 3:48:40 PM
+class Solution {
+    public double myPow(double x, int n) {
+
+        return binary(x,(long) n);
+        
+    }
+
+    private double binary(double x,long n)
+    {
+        if(n==0)
+        {
+            return 1;
+        }
+
+        if(n<0)
+        {
+            return 1.0/binary(x,-n);
+
+        }
+
+        if(n%2==1)
+        {
+            return x*binary(x*x ,(n-1)/2);
+
+        }
+        else
+        {
+            return binary(x*x ,n/2);
+        }
+    }
+}
